@@ -178,4 +178,4 @@ const dairyProductSchema = new mongoose.Schema(
   },
 );
 
-module.exports = mongoose.model("DairyProduct", dairyProductSchema);
+module.exports = mongoose.model("DairyProduct", dairyProductSchema, "DairyProduct");
