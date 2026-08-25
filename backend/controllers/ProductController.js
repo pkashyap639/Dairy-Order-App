@@ -1,4 +1,5 @@
 const DairyProduct = require("../models/DairyProduct.model");
+const { cache } = require("../cache/cache.js");
 
 // get All Products
 const getAllProducts = async (req, res) => {
@@ -9,7 +10,10 @@ const getAllProducts = async (req, res) => {
         message: "No Prodcuts in List",
       });
     }
-    res.status(200).json(products);
+    cache.set("Data", products);
+    res.status(200).json({
+      products,
+    });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
