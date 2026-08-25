@@ -5,12 +5,11 @@ const cache = new nodeCache({
   checkPeriod: 120,
   useClones: true,
 });
-
 const setupCache = () => {
   if (!(cache instanceof nodeCache)) {
     throw new Error("Cache failed to initialize");
   }
+
   console.log("Cache Created");
 };
-
-module.exports = { setupCache, cache };
+module.exports = { cache, setupCache };
