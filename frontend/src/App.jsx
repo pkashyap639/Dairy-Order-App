@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { getProducts } from "./Api.js";
 
 function App() {
-  const { products, setProducts } = useState("");
+  const [products, setProducts] = useState([]);
   useEffect(() => {
     // fetch products here
     getProducts()
@@ -18,8 +18,8 @@ function App() {
         </span>
       </div>
       <div className="p-4">
-        {products.maps((p) => (
-          <div key={p.code}>{p.name}</div>
+        {products.map((p) => (
+          <div key={p.product_code}>{p.description}</div>
         ))}
       </div>
     </div>
