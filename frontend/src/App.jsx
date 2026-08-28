@@ -2,11 +2,13 @@ import "./App.css";
 
 function App() {
   return (
-    <>
-      <div className="bg-chill-600 text-white p-4 rounded-lg">
-        Tailwind is working
+    <div className="min-h-screen bg-frost">
+      <div className="sticky top-0 bg-ink-900 px-4 py-4">
+        <span className="font-display font-semibold text-sm tracking-wide text-white uppercase">
+          Store 159 · Dairy Order
+        </span>
       </div>
-    </>
+    </div>
   );
 }
 
