@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import { getProducts } from "./Api.js";
+import Product from "./Components/Product.jsx";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -19,7 +20,7 @@ function App() {
       </div>
       <div className="p-4">
         {products.map((p) => (
-          <div key={p.product_code}>{p.description}</div>
+          <Product key={p.product_code} product={p} />
         ))}
       </div>
     </div>
