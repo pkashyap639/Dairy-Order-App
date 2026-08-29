@@ -2,9 +2,11 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import { getProducts } from "./Api.js";
 import Product from "./Components/Product.jsx";
+import TallyStepper from "./Components/TallyStepper.jsx";
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [qty, setQty] = useState(0);
   useEffect(() => {
     // fetch products here
     getProducts()
@@ -19,8 +21,16 @@ function App() {
         </span>
       </div>
       <div className="p-4">
+        <div className="mb-4 rounded-lg bg-white p-4 border border-line">
+          <span className="mb-2 block font-display text-xs uppercase tracking-wide text-ink-500">
+            Tally
+          </span>
+        </div>
         {products.map((p) => (
-          <Product key={p.product_code} product={p} />
+          <div key={p.product_code}>
+            <Product product={p} />
+            <TallyStepper value={qty} onChange={setQty} />
+          </div>
         ))}
       </div>
     </div>
