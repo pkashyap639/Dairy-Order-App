@@ -1,4 +1,5 @@
-function Product({ product }) {
+import TallyStepper from "./TallyStepper.jsx";
+function Product({ product, quantity, onChange }) {
   const active = product.qty > 0;
   return (
     <div>
@@ -21,9 +22,10 @@ function Product({ product }) {
         </div>
 
         {/* placeholder — the real +/- control comes in Step 4 */}
-        <div className="font-mono text-sm text-ink-900 w-10 text-center">
+        {/* <div className="font-mono text-sm text-ink-900 w-10 text-center">
           {product.qty}
-        </div>
+        </div> */}
+        <TallyStepper value={quantity} onChange={onChange} />
       </div>
     </div>
   );

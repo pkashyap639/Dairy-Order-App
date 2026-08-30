@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
 
 @theme {
   --color-frost: #f3f7f8;

@@ -19,7 +19,8 @@ export default function TallyStepper({ value, onChange }) {
       </button>
 
       <div className="w-12 flex items-center justify-center bg-white font-mono font-semibold text-base text-ink-900">
-        {String(value).padStart(2, "0")}
+        {/* {String(value).padStart(2, "0")} */}
+        <input value={value} onChange={(e) => onChange(e.target.value)} />
       </div>
 
       <button
